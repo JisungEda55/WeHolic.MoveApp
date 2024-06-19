@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeHolic MoveApp</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>WeHolic Corp.</h1>
+    <script>
+        window.onload = function() {
+            var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+            if (/android/i.test(userAgent)) {
+                document.querySelector('h1').textContent = "Play 스토어로 이동중!";
+                window.location.href = "https://play.google.com/store/apps/details?id=ru.yandex.taxi";
+            } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+                document.querySelector('h1').textContent = "앱스토어로 이동중!";
+                window.location.href = "https://apps.apple.com/us/app/yandex-go-taxi-food-delivery/id472650686";
+            } else {
+                document.querySelector('h1').textContent = "Android / IOS가 아닌 것 같아요..";
+                window.location.href = "https://taxi.yandex.com";
+            }
+        };
+    </script>
+</body>
+</html>
