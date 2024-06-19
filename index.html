@@ -5,23 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WeHolic MoveApp</title>
     <style>
+        @font-face {
+            font-family: 'TheJamsil5Bold';
+            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2302_01@1.0/TheJamsil5Bold.woff2') format('woff2');
+            font-weight: 700;
+            font-style: normal;
+        }
+
         body {
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            font-family: Arial, sans-serif;
+            font-family: 'TheJamsil5Bold', Arial, sans-serif;
+            background-color: #fff;
+            margin: 0;
         }
 
         h1 {
-            color: #333;
+            font-size: 42px;
+            color: #fc3c1c;
+            font-weight: 700;
+            margin: 0;
+            
+        }
+
+        footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            padding: 10px 0;
+            background-color: #fff;
+            font-size: 32px;
+            color: #fc3c1c;
+            font-weight: 800;
         }
     </style>
-</head>
-<body>
-    <h1>WeHolic Corp.</h1>
     <script>
-        window.onload = function() {
+        document.addEventListener('DOMContentLoaded', function() {
             var userAgent = navigator.userAgent || navigator.vendor || window.opera;
 
             if (/android/i.test(userAgent)) {
@@ -34,7 +57,13 @@
                 document.querySelector('h1').textContent = "Android / IOS가 아닌 것 같아요..";
                 window.location.href = "https://taxi.yandex.com";
             }
-        };
+        });
     </script>
+</head>
+<body>
+    <h1>Redirecting...</h1>
+    <footer>
+        WeHolic Corp.
+    </footer>
 </body>
 </html>
