@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WeHolic MoveApp</title>
+    <title>WeHolic</title>
     <style>
         @font-face {
-            font-family: 'TheJamsil5Bold';
-            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2302_01@1.0/TheJamsil5Bold.woff2') format('woff2');
+            font-family: 'LINESeedKR-Bd';
+            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/LINESeedKR-Bd.woff2') format('woff2');
             font-weight: 700;
             font-style: normal;
         }
@@ -18,7 +18,7 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            font-family: 'TheJamsil5Bold', Arial, sans-serif;
+            font-family: 'LINESeedKR-Bd', Arial, sans-serif;
             background-color: #fff;
             margin: 0;
         }
@@ -28,7 +28,17 @@
             color: #fc3c1c;
             font-weight: 700;
             margin: 0;
-            
+        }
+
+        #qrcode {
+            margin-top: 20px;
+        }
+
+        #message {
+            margin-top: 20px;
+            font-size: 20px;
+            color: #333;
+            text-align: center;
         }
 
         footer {
@@ -43,6 +53,7 @@
             font-weight: 800;
         }
     </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             var userAgent = navigator.userAgent || navigator.vendor || window.opera;
@@ -55,13 +66,16 @@
                 window.location.href = "https://apps.apple.com/us/app/yandex-go-taxi-food-delivery/id472650686";
             } else {
                 document.querySelector('h1').textContent = "Android / IOS가 아닌 것 같아요..";
-                window.location.href = "https://taxi.yandex.com";
+                new QRCode(document.getElementById("qrcode"), "https://jisungeda55.github.io/WeHolic.MoveApp/");
+                document.getElementById("message").textContent = "QR코드를 스마트폰으로 접속해주세요 :D";
             }
         });
     </script>
 </head>
 <body>
     <h1>Redirecting...</h1>
+    <div id="qrcode"></div>
+    <div id="message"></div>
     <footer>
         WeHolic Corp.
     </footer>
